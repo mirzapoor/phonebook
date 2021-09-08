@@ -14,13 +14,19 @@ class ContactsController extends Controller
         return view('contact.contacts',compact('contacts'));
     }
 
-    public function store(Request $request,Contact $contacts)
+    public function store(Contact $contacts,Request $request)
     {
-
         $contacts->create($request->all());
-        return back();
-
+        return  back();
     }
+
+    public function insert(Contact $contacts)
+    {
+        return view('contact.insert',compact('contacts'));
+    }
+
+
+    
 
     public function edit(Contact $contacts)
     {

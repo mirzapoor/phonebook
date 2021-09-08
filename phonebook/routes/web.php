@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 
 Route::get('/contacts','ContactsController@index');
-Route::get('/contacts/{contacts}','ContactsController@show');
-Route::post('/contacts/{contacts}/contact','ContactsController@store');
+Route::get('/contacts/insert','ContactsController@insert');
+
+Route::post('/contacts','ContactsController@store');
+
 Route::get('contacts/{contacts}/edit','ContactsController@edit');
 Route::patch('contacts/{contacts}','ContactsController@update');
