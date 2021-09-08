@@ -1,10 +1,11 @@
 @extends('../layout')
+
 @section('content')
     <h3 class="mx-auto" style="width:400px"> ویرایش مخاطبین</h3>
     <br>
-    <a class="btn btn-sm btn-default" href="/contacts/{{$contacts->id}}" class="mx-auto" style="width:400px">برگشت</a>
+    <a class="btn btn-sm btn-default" href="/contacts/{{$contacts->contacts_id}}" class="mx-auto" style="width:400px">برگشت</a>
 
-    <form method="POST" action="/contacts/{{$contacts->id}}/contact" class="mx-auto" style="width:250px">
+    <form method="POST" action="/contacts/{{$contacts->id}}" class="mx-auto" style="width:250px">
         @csrf 
         {{method_field('PATCH')}}
 
@@ -26,13 +27,13 @@
         <h4> آدرس:</h4> <br>
 
         <div class="form-group">
-            <textarea  required name="address" title="address" class="form-control">{{$contact->address}}</textarea>
+            <textarea  required name="address" title="address" class="form-control">{{$contacts->address}}</textarea>
         </div>
 
         <h4> ایمیل:</h4> <br>
 
         <div class="form-group">
-            <textarea  required name="email" title="email" class="form-control">{{$contact->email}}</textarea>
+            <textarea  required name="email" title="email" class="form-control">{{$contacts->email}}</textarea>
         </div>
         <br><br>
         <div class="form-group">

@@ -14,28 +14,22 @@ class ContactsController extends Controller
         return view('contact.contacts',compact('contacts'));
     }
 
-    public function store(Request $request,Contact $contact)
+    public function store(Request $request,Contact $contacts)
     {
 
-        $contact->create($request->all());
+        $contacts->create($request->all());
         return back();
 
     }
 
-    public function show(Contact $contact)
+    public function edit(Contact $contacts)
     {
-        // $users=User::find($id);
-        return view('contact.contacts',compact( 'contact'));
+        return view('contact.edit',compact('contacts'));
     }
 
-    // public function edit(Contact $contacts)
-    // {
-    //     return view('contact.edit',compact('contact'));
-    // }
-
-    // public function update(Contact $contacts,Request   $request)
-    // {
-    //     $note->update($request->all());
-    //     return back();
-    //   }
+    public function update(Contact $contacts,Request   $request)
+    {
+        $contacts->update($request->all());
+        return back();
+      }
 }

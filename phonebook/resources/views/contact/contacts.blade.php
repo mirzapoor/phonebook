@@ -6,7 +6,7 @@
 
     @foreach ($contacts as $contact)
     <div  class="mx-auto" style="width:1000px">
-        <a href="{{$contact->id}}">{{$contact->name}}  {{$contact->lastname}}   </a></div>
+        <a href="/contacts/{{$contact->id}}/edit">{{$contact->name}}  {{$contact->lastname}}   </a></div>
     @endforeach
 @endsection
 

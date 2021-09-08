@@ -1,6 +1,5 @@
 @extends('layout')
 
-
 @section('content')
  <div class="row">
      <div class="col-md-6 col-md-offset-3">
@@ -8,8 +7,10 @@
         <h3 class="mx-auto" style="width:400px"> ایجاد مخاطب جدید</h3>
         <hr>
 
-        <form method="POST" action="/contacts/{{$contact->id}}/contact" class="mx-auto" style="width:250px">
+        <form method="POST" action="/insert" class="mx-auto" style="width:250px">
                 @csrf 
+                {{method_field('PATCH')}}
+
                 <h4> نام :</h4> <br>
             <div class="form-group">
                 <textarea  required name="name" title="name" class="form-control"></textarea>
