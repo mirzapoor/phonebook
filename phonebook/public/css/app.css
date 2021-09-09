@@ -1,4 +1,18 @@
 body {
-  background-color: rgb(32, 202, 55);
+  background-color: rgb(232, 238, 233);
 }
 
+a{
+
+  border-bottom: 25px;
+  color: aqua;
+}
+
+#side-bar, #content{
+  width: 50%;
+  float: left;
+  }
+  
+  .clear{
+  clear: both;
+  }

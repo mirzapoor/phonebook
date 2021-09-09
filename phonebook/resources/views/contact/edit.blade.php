@@ -3,14 +3,14 @@
 @section('content')
     <h3 class="mx-auto" style="width:400px"> ویرایش مخاطبین</h3>
     <br>
-    <a class="btn btn-sm btn-default" href="/contacts/{{$contacts->contacts_id}}" class="mx-auto" style="width:400px">برگشت</a>
+    <a class="btn btn-primary" href="/contacts/{{$contacts->contacts_id}}" class="mx-auto" style="width:400px">برگشت</a>
 
     <form method="POST" action="/contacts/{{$contacts->id}}" class="mx-auto" style="width:250px">
         @csrf 
         {{method_field('PATCH')}}
 
             <h4> نام :</h4> <br>
-        <div class="form-group">
+        <div class="form-group" >
             <textarea  required name="name" title="name" class="form-control">{{$contacts->name}}</textarea>
         </div>
         <h4>  نام خانوادگی:</h4> <br>
