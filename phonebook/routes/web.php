@@ -15,11 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware' =>['web']],function(){
+    Route::get('/contacts','ContactsController@index');
+    Route::get('/contacts/insert','ContactsController@insert');
 
-Route::get('/contacts','ContactsController@index');
-Route::get('/contacts/insert','ContactsController@insert');
+    Route::post('/contacts','ContactsController@store');
 
-Route::post('/contacts','ContactsController@store');
+    Route::get('contacts/{contacts}/edit','ContactsController@edit');
+    Route::patch('contacts/{contacts}','ContactsController@update');
+    Route::get('contacts/{contacts}/delete','ContactsController@destroy');
 
-Route::get('contacts/{contacts}/edit','ContactsController@edit');
-Route::patch('contacts/{contacts}','ContactsController@update');
+
+});

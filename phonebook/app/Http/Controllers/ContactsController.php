@@ -13,9 +13,19 @@ class ContactsController extends Controller
 
         return view('contact.contacts',compact('contacts'));
     }
+    public function destroy($contacts) {
+        \DB::delete('delete from contacts where id = ?',[$contacts]);
+        return  back();
+
+     }
 
     public function store(Contact $contacts,Request $request)
     {
+        $this->validate($request,[
+            'mobile' => 'required|min:11',
+            'email' =>'email',
+
+        ]);
         $contacts->create($request->all());
         return  back();
     }
@@ -24,9 +34,7 @@ class ContactsController extends Controller
     {
         return view('contact.insert',compact('contacts'));
     }
-
-
-    
+   
 
     public function edit(Contact $contacts)
     {
@@ -38,4 +46,6 @@ class ContactsController extends Controller
         $contacts->update($request->all());
         return back();
       }
+     
+
 }
